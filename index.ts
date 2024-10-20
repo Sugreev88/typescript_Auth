@@ -56,6 +56,11 @@ const error = async function (
 app.use(error);
 //--//
 
+// Sample route for testing
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
