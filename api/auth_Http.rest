@@ -1,0 +1,81 @@
+# local host url #
+@baseurl=http://localhost:5000
+
+# render cloud url #
+# @baseurl=https://magiquint-backend.onrender.com
+
+# access token #
+@accessToken= eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjOThjNjZiOC00MjUzLTQ4OTYtOTBmOC03ZjczOTkwNDgzNjgiLCJpYXQiOjE3MjkzMzc3MzIsImV4cCI6MTcyOTM3MzczMn0.v8xlSg2b38LGTZs1WMu2P1Cj7jVqngGK4ttTD7uJnIE
+
+# refresh token #
+@refreshToken= eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0YWJmNzQyOC1hMjMyLTQ4OWYtOTUwMi05ZTIzOGE5NzA1MjYiLCJpYXQiOjE3MTIwNzcwNzgsImV4cCI6MTcxNDY2OTA3OH0.uZf-2MALIe8dK10INjseTP2arY6evoE1tgfOvBwtflE
+
+# create new access token #
+###
+POST {{baseurl}}/refresh/token
+Content-Type: application/json
+Authorization: bearer {{refreshToken}}
+
+## user signup (with userName and Password) for the first time user ##
+###
+POST {{baseurl}}/api/register
+Content-Type: application/json
+
+{
+    "name":"Sugreev",
+    "role":"admin",
+    "emailId":"ksugreev88@gmail.com",
+    "password":"123456"
+}
+
+# login with userName and password #
+###
+POST {{baseurl}}/api/login
+Content-Type: application/json
+
+{
+    "emailId":"ksugreev88@gmail.com",
+    "password":"123456"
+}
+
+# get user details #
+###
+GET {{baseurl}}/api/profile
+Authorization: bearer {{accessToken}}
+
+# add user (admin route) #
+###
+POST {{baseurl}}/api/admin/users
+Content-Type: application/json
+Authorization: bearer {{accessToken}}
+
+{
+    "name":"Sugreev",
+    # "role":"admin",
+    "emailId":"ksugreev818@gmail.com",
+    "password":"123456"
+}
+
+# get all registered user (admin route) #
+###
+GET {{baseurl}}/api/admin/users?page=1&limit=10
+Authorization: bearer {{accessToken}}
+
+# update registered user details (admin route) #
+###
+PUT {{baseurl}}/api/admin/users
+Content-Type: application/json
+Authorization: bearer {{accessToken}}
+userId:c98c66b8-4253-4896-90f8-7f7399048368
+
+{
+    "name":"Sugreev kumar",
+    "role":"admin",
+    "emailId":"ksugreev8180@gmail.com"
+}
+
+# delete registered user details (admin route) #
+###
+DELETE {{baseurl}}/api/admin/users
+Authorization: bearer {{accessToken}}
+userId:c98c66b8-4253-4896-90f8-7f7399048368
