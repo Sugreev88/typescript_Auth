@@ -1,8 +1,5 @@
-# local host url #
-@baseurl=http://localhost:5000
-
-# render cloud url #
-# @baseurl=https://magiquint-backend.onrender.com
+# base url #
+@baseurl=https://6hnt0g7k-5000.inc1.devtunnels.ms
 
 # access token #
 @accessToken= eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjOThjNjZiOC00MjUzLTQ4OTYtOTBmOC03ZjczOTkwNDgzNjgiLCJpYXQiOjE3MjkzMzc3MzIsImV4cCI6MTcyOTM3MzczMn0.v8xlSg2b38LGTZs1WMu2P1Cj7jVqngGK4ttTD7uJnIE
