@@ -5,7 +5,7 @@ import { Request, Response, NextFunction } from "express";
 import dotenv from "dotenv";
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 3000;
 
 //-connect db-//
 import { connectDb } from "./utils/dbUtils";
