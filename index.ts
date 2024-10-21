@@ -24,7 +24,7 @@ fetchRecentUsers();
 
 //--Middleware to parse JSON requests--//
 app.use(express.json());
-
+app.use(express.urlencoded({ extended: true }));
 app.use(
   body.json({
     limit: "500kb",
